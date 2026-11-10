@@ -26,6 +26,9 @@
             </div>
 
             <form id="studentForm" class="panel">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId" placeholder="STU001" required>
+
                 <label for="name">Student name</label>
                 <input type="text" id="name" name="name" placeholder="e.g. John Smith" autocomplete="name" required>
 
@@ -57,7 +60,7 @@
                     type="search"
                     id="studentSearch"
                     class="searchInput"
-                    placeholder="Search by name, email, or department"
+                    placeholder="Search by student ID, name, email, or department"
                     autocomplete="off"
                 >
 
@@ -65,7 +68,7 @@
                     <table>
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
+                                <th scope="col">Student ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Department</th>

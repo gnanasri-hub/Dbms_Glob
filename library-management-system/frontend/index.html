@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f6f8">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <main class="app">
+        <header class="pageHeader">
+            <p class="eyebrow">LIBRARY MANAGEMENT</p>
+            <h1>Student Directory</h1>
+            <p class="pageDescription">Manage your student records in one place.</p>
+        </header>
+
+        <p id="statusMessage" class="statusMessage" role="status" aria-live="polite"></p>
+
+        <section id="addStudentView" class="view" aria-labelledby="addStudentHeading">
+            <div class="sectionHeading">
+                <h2 id="addStudentHeading">Add a student</h2>
+                <p>Enter the student details below to add a record.</p>
+            </div>
+
+            <form id="studentForm" class="panel">
+                <label for="name">Student name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. John Smith" autocomplete="name" required>
+
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="e.g. john@example.com" autocomplete="email" required>
+
+                <label for="department">Department</label>
+                <input type="text" id="department" name="department" placeholder="e.g. Computer Science" required>
+
+                <button id="submitStudentButton" class="primaryButton" type="submit">Add Student</button>
+                <button id="cancelEditButton" class="secondaryButton" type="button" hidden>Cancel Edit</button>
+                <button id="viewStudentsButton" class="secondaryButton" type="button">View Students</button>
+            </form>
+        </section>
+
+        <section id="studentListView" class="view" aria-labelledby="studentListHeading" hidden>
+            <button id="backButton" class="backButton" type="button">
+                <span aria-hidden="true">&larr;</span> Back
+            </button>
+
+            <div class="sectionHeading listHeading">
+                <h2 id="studentListHeading">Student List</h2>
+                <p>Search and manage student records.</p>
+            </div>
+
+            <div class="panel">
+                <label class="searchLabel" for="studentSearch">Search students</label>
+                <input
+                    type="search"
+                    id="studentSearch"
+                    class="searchInput"
+                    placeholder="Search by name, email, or department"
+                    autocomplete="off"
+                >
+
+                <div class="tableWrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/script.js" defer></script>
+</body>
+
+</html>

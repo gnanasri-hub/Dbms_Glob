@@ -1,0 +1,300 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #1d2939;
+    background: #f4f6f8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    padding: 56px 24px;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.app {
+    width: min(100%, 980px);
+    margin: 0 auto;
+}
+
+.pageHeader {
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: #1769aa;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    letter-spacing: -0.04em;
+}
+
+.pageDescription,
+.sectionHeading p {
+    margin-bottom: 0;
+    color: #667085;
+    line-height: 1.6;
+}
+
+.view[hidden] {
+    display: none;
+}
+
+.sectionHeading {
+    margin-bottom: 20px;
+}
+
+.sectionHeading h2 {
+    margin-bottom: 6px;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+}
+
+.panel {
+    padding: 28px;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.05);
+}
+
+#studentForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #344054;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    min-height: 46px;
+    margin-bottom: 20px;
+    padding: 10px 13px;
+    border: 1px solid #d0d5dd;
+    border-radius: 7px;
+    outline: none;
+    background: #fff;
+    color: #1d2939;
+    transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+input::placeholder {
+    color: #98a2b3;
+}
+
+input:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+button {
+    min-height: 42px;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 120ms ease, opacity 120ms ease;
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(49, 130, 206, 0.35);
+    outline-offset: 2px;
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.primaryButton,
+.secondaryButton {
+    width: 100%;
+    padding: 10px 16px;
+}
+
+.primaryButton {
+    background: #1769aa;
+    color: #fff;
+}
+
+.primaryButton:hover {
+    background: #12558c;
+}
+
+.secondaryButton {
+    margin-top: 10px;
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    color: #344054;
+}
+
+.secondaryButton:hover,
+.backButton:hover {
+    background: #f2f4f7;
+}
+
+.statusMessage {
+    min-height: 1.5em;
+    margin: -20px 0 18px;
+    color: #167347;
+    text-align: center;
+}
+
+.statusMessage:empty {
+    min-height: 0;
+    margin: 0;
+}
+
+.statusMessage.error {
+    color: #b42318;
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    margin-bottom: 22px;
+    padding: 7px 12px;
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    color: #344054;
+}
+
+.backButton span {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.listHeading {
+    text-align: center;
+}
+
+.searchLabel {
+    margin-bottom: 8px;
+}
+
+.searchInput {
+    max-width: 440px;
+    margin-bottom: 22px;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    border: 1px solid #eaecf0;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eaecf0;
+    vertical-align: middle;
+}
+
+th {
+    background: #f9fafb;
+    color: #475467;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+td {
+    color: #344054;
+    font-size: 0.92rem;
+}
+
+td:last-child {
+    white-space: nowrap;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.emptyMessage {
+    padding: 32px 16px;
+    color: #667085;
+    text-align: center;
+}
+
+.deleteButton {
+    min-height: 34px;
+    padding: 6px 12px;
+    background: #fff;
+    color: #b42318;
+}
+
+.editButton {
+    min-height: 34px;
+    margin-right: 4px;
+    padding: 6px 12px;
+    background: #eff8ff;
+    color: #175cd3;
+}
+
+.editButton:hover {
+    background: #d1e9ff;
+}
+
+.deleteButton:hover {
+    background: #fef3f2;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 32px 16px;
+    }
+
+    .pageHeader {
+        margin-bottom: 28px;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+}

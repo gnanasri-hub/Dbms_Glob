@@ -5,7 +5,7 @@ const express = require("express");
 const { db, initializeDatabase } = require("./db");
 
 const app = express();
-const frontendPath = path.resolve(__dirname, "..", "frontend");
+const frontendPath = path.resolve(__dirname, "..", "frontend", "dist");
 const indexPath = path.join(frontendPath, "index.html");
 const port = Number(process.env.PORT) || 5000;
 
@@ -196,6 +196,17 @@ app.delete("/students/:id", (req, res) => {
 });
 
 app.use(express.static(frontendPath, { index: false }));
+
+app.get("/{*path}", (req, res, next) => {
+    if (req.path.startsWith("/students")) {
+        next();
+        return;
+    }
+
+    res.sendFile(indexPath, (error) => {
+        if (error) next(error);
+    });
+});
 
 app.use((error, req, res, next) => {
     console.error("Request failed:", error);

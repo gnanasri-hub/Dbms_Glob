@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: dbms-glob
+    runtime: node
+    plan: free
+    buildCommand: npm ci --prefix library-management-system/frontend && npm ci --prefix library-management-system/backend && npm run build --prefix library-management-system/frontend
+    startCommand: npm start --prefix library-management-system/backend
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
